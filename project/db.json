@@ -1,0 +1,25 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "John",
+      "lastname": "Doe",
+      "email": "John@doe.com"
+    },
+    {
+      "id": 2,
+      "name": "Davide",
+      "lastname": "Barbieri",
+      "email": "Davide@doe.com"
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "customer_id": 1,
+      "date": "2018-01-01",
+      "time": "12:00",
+      "people": 1
+    }
+  ]
+}
