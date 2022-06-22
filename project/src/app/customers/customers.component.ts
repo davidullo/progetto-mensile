@@ -19,7 +19,7 @@ export class CustomersComponent implements OnInit {
     this.customerSvc.createUser(this.customer).subscribe((res) => {
       console.log(res);
 
-      // this.customers.push()
+      this.customers.push();
     });
   }
 }
