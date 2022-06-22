@@ -13,13 +13,39 @@ export class CustomersComponent implements OnInit {
 
   constructor(private customerSvc: CustomerService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.customerSvc.getAllUsers().subscribe((customers) => {
+    // this.customers = customers;
+    // });
+
+    this.customerSvc.getAllUsers().subscribe((customers) => {
+      this.customers = customers;
+    });
+  }
 
   saveNewUser() {
-    this.customerSvc.createUser(this.customer).subscribe((res) => {
+    this.customerSvc.createUser(this.customer).subscribe((res: Customer) => {
       console.log(res);
+      this.customers.push(res);
+    });
+  }
 
-      this.customers.push();
+  removeUser() {
+    this.customerSvc.deleteUser(this.customer).subscribe((res: Customer) => {
+      console.log(res);
+      this.customers = this.customers.filter((c) => c.id !== res.id);
+    });
+  }
+
+  selectCustomer(customer: Customer) {
+    this.customer = customer;
+  }
+
+  editUser() {
+    this.customerSvc.updateUser(this.customer).subscribe((res: Customer) => {
+      console.log(res);
+      let index = this.customers.findIndex((customer) => customer.id == res.id);
+      this.customers.splice(index, 1, res);
     });
   }
 }

@@ -74,19 +74,35 @@
     </div>
     <div class="col-12 col-md-6">
       <button class="btn btn-primary" (click)="saveNewUser()">Salva</button>
+      <button class="btn btn-warning" (click)="editUser()">Modifica</button>
     </div>
   </div>
 </form>
-
-<table class="table table-striped table-bordered table-hover">
-  <tr *ngFor="let customer of customers">
-    <td>{{ customer.name }}</td>
-    <td>{{ customer.lastname }}</td>
-    <td>{{ customer.address.street }}</td>
-    <td>{{ customer.address.city }}</td>
-    <td>{{ customer.address.state }}</td>
-    <td>{{ customer.address.zip }}</td>
-    <td>{{ customer.email }}</td>
-    <td>{{ customer.password }}</td>
-  </tr>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Indirizzo</th>
+      <th>Modifica</th>
+      <th>Cancella</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.lastname }}</td>
+      <td>{{ customer.email }}</td>
+      <td><button class="btn btn-primary">Mostra Indirizzo</button></td>
+      <td>
+        <button class="btn btn-warning" (click)="editUser()">Modifica</button>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="removeUser()">Cancella</button>
+      </td>
+    </tr>
+  </tbody>
 </table>

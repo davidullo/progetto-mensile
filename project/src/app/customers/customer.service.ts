@@ -10,8 +10,27 @@ export class CustomerService {
 
   apiUrl = 'http://localhost:4201/customers';
 
+  // getAllUsers(customers: Customer[]) {
+  //  return this.http.get<Customer[]>(this.apiUrl);
+  //}
+
+  getAllUsers() {
+    return this.http.get<Customer[]>(this.apiUrl);
+  }
+
   createUser(customer: Customer) {
     // indirizzo da chiamare e dato da inserire come parametri
-    return this.http.post(this.apiUrl, customer);
+    return this.http.post<Customer>(this.apiUrl, customer);
+  }
+
+  deleteUser(customer: Customer) {
+    return this.http.delete<Customer>(
+      this.apiUrl + '/' + customer.id,
+      customer
+    );
+  }
+
+  updateUser(customer: Customer) {
+    return this.http.patch<Customer>(this.apiUrl + '/' + customer.id, customer);
   }
 }
