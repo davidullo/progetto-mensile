@@ -39,136 +39,6 @@
       "id": 4
     },
     {
-      "name": "gnf",
-      "lastname": "fng",
-      "email": "fgnfg",
-      "password": "nfgn",
-      "address": {
-        "street": "ntfn",
-        "city": "gnf",
-        "state": "ngfn",
-        "zip": "gnfn"
-      },
-      "id": 5
-    },
-    {
-      "name": "gnf",
-      "lastname": "fng",
-      "email": "fgnfg",
-      "password": "nfgn",
-      "address": {
-        "street": "ntfn",
-        "city": "gnf",
-        "state": "ngfn",
-        "zip": "gnfn"
-      },
-      "id": 6
-    },
-    {
-      "name": "gnf",
-      "lastname": "fng",
-      "email": "fgnfg",
-      "password": "nfgn",
-      "address": {
-        "street": "ntfn",
-        "city": "gnf",
-        "state": "ngfn",
-        "zip": "gnfn"
-      },
-      "id": 7
-    },
-    {
-      "name": "gnf",
-      "lastname": "fng",
-      "email": "fgnfg",
-      "password": "nfgn",
-      "address": {
-        "street": "ntfn",
-        "city": "gnf",
-        "state": "ngfn",
-        "zip": "gnfn"
-      },
-      "id": 8
-    },
-    {
-      "name": "gnf",
-      "lastname": "fng",
-      "email": "fgnfg",
-      "password": "nfgn",
-      "address": {
-        "street": "ntfn",
-        "city": "gnf",
-        "state": "ngfn",
-        "zip": "gnfn"
-      },
-      "id": 9
-    },
-    {
-      "name": "gnf",
-      "lastname": "fng",
-      "email": "fgnfg",
-      "password": "nfgn",
-      "address": {
-        "street": "ntfn",
-        "city": "gnf",
-        "state": "ngfn",
-        "zip": "gnfn"
-      },
-      "id": 10
-    },
-    {
-      "name": "gnf",
-      "lastname": "fng",
-      "email": "fgnfg",
-      "password": "nfgn",
-      "address": {
-        "street": "ntfn",
-        "city": "gnf",
-        "state": "ngfn",
-        "zip": "gnfn"
-      },
-      "id": 11
-    },
-    {
-      "name": "gnf",
-      "lastname": "fng",
-      "email": "fgnfg",
-      "password": "nfgn",
-      "address": {
-        "street": "ntfn",
-        "city": "gnf",
-        "state": "ngfn",
-        "zip": "gnfn"
-      },
-      "id": 12
-    },
-    {
-      "name": "gnf",
-      "lastname": "fng",
-      "email": "fgnfg",
-      "password": "nfgn",
-      "address": {
-        "street": "ntfn",
-        "city": "gnf",
-        "state": "ngfn",
-        "zip": "gnfn"
-      },
-      "id": 13
-    },
-    {
-      "name": "tyuyyut",
-      "lastname": "utyuyt",
-      "email": "yuutyuyt",
-      "password": "utyuytuty",
-      "address": {
-        "street": "utyuytu",
-        "city": "utytyuuty",
-        "state": "uytuyt",
-        "zip": "utyuty"
-      },
-      "id": 14
-    },
-    {
       "name": "Shad Brooks",
       "lastname": "Floyd",
       "email": "gugohe@mailinator.com",
@@ -179,7 +49,7 @@
         "state": "Iure molestias corpo",
         "zip": "41077"
       },
-      "id": 15
+      "id": 5
     },
     {
       "name": "Mona Cantrell",
@@ -192,7 +62,7 @@
         "state": "Amet sunt laborios",
         "zip": "96579"
       },
-      "id": 16
+      "id": 6
     },
     {
       "name": "Emi Waller",
@@ -205,7 +75,16 @@
         "state": "Earum soluta ut sit ",
         "zip": "12316"
       },
-      "id": 17
+      "id": 7
+    }
+  ],
+  "signupUsers": [
+    {
+      "name": "Scott Holman",
+      "lastname": "Fitzpatrick",
+      "email": "loku@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "id": 1
     }
   ],
   "bookings": [

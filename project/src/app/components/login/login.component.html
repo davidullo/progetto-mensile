@@ -6,19 +6,24 @@
           <h1>Login</h1>
           <h6>Please enter your Email and Password.</h6>
         </div>
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
           <div class="mb-3">
             <label for="emailInput" class="form-label">Email address</label>
             <input
+              formControlName="email"
               type="email"
               class="form-control"
               id="emailInput"
-              aria-describedby="emailHelp"
             />
           </div>
           <div class="mb-3">
             <label for="passwordInput" class="form-label">Password</label>
-            <input type="password" class="form-control" id="passwordInput" />
+            <input
+              formControlName="password"
+              type="password"
+              class="form-control"
+              id="passwordInput"
+            />
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-success fw-bold">Login</button>
