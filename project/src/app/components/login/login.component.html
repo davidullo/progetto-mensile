@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center py-5">
+    <div class="col-md-6">
+      <div class="card p-5">
+        <div class="text-center mb-5">
+          <h1>Login</h1>
+          <h6>Please enter your Email and Password.</h6>
+        </div>
+        <form>
+          <div class="mb-3">
+            <label for="emailInput" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailInput"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="passwordInput" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput" />
+          </div>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="submit" class="btn btn-success fw-bold">Login</button>
+          </div>
+        </form>
+
+        <div class="or-div my-4">
+          <span>Or</span>
+        </div>
+        <div class="d-grid gap-2 col-12 mx-auto">
+          <a
+            href=""
+            class="btn btn-success"
+            role="button"
+            [routerLink]="['/signup']"
+            >Sign up</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
