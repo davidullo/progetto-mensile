@@ -101,7 +101,9 @@
         <button class="btn btn-warning" (click)="editUser()">Modifica</button>
       </td>
       <td>
-        <button class="btn btn-danger" (click)="removeUser()">Cancella</button>
+        <button class="btn btn-danger" (click)="removeUser(customer.id)">
+          Cancella
+        </button>
       </td>
     </tr>
   </tbody>

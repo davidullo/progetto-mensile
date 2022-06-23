@@ -30,10 +30,10 @@ export class CustomersComponent implements OnInit {
     });
   }
 
-  removeUser() {
-    this.customerSvc.deleteUser(this.customer).subscribe((res: Customer) => {
+  removeUser(id: number) {
+    this.customerSvc.deleteUser(id).subscribe((res) => {
       console.log(res);
-      this.customers = this.customers.filter((c) => c.id !== res.id);
+      this.customers = this.customers.filter((c) => c.id != id);
     });
   }
 

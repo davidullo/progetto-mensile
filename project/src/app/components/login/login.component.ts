@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -33,7 +34,13 @@ export class LoginComponent implements OnInit {
           );
         });
         if (user) {
-          alert('Login successful!');
+          Swal.fire({
+            icon: 'success',
+            title: 'Login successful!',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          //alert('Login successful!');
           this.loginForm.reset();
           this.router.navigate(['home']);
         } else {

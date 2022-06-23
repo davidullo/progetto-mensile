@@ -23,19 +23,6 @@
         "state": "Italia",
         "zip": "00010"
       },
-      "id": 3
-    },
-    {
-      "name": "Davide",
-      "lastname": "Barbieri",
-      "email": "test@io.it",
-      "password": "iohfsidhfiosgdfgg",
-      "address": {
-        "street": "Via test 28",
-        "city": "Roma",
-        "state": "Italia",
-        "zip": "00010"
-      },
       "id": 4
     },
     {
@@ -76,6 +63,19 @@
         "zip": "12316"
       },
       "id": 7
+    },
+    {
+      "name": "Ashton Walker",
+      "lastname": "Le",
+      "email": "myqaric@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "address": {
+        "street": "Quod officiis tempor",
+        "city": "Voluptatibus culpa v",
+        "state": "Impedit in vel elig",
+        "zip": "37698"
+      },
+      "id": 8
     }
   ],
   "signupUsers": [
