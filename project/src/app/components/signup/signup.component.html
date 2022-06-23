@@ -15,6 +15,15 @@
               class="form-control"
               id="nameInput"
             />
+            <span
+              class="text-danger"
+              *ngIf="
+                signupForm.controls['name'].dirty &&
+                signupForm.hasError('required', 'name')
+              "
+            >
+              *Name required
+            </span>
           </div>
           <div class="mb-3">
             <label for="lastnameInput" class="form-label">Last name</label>
@@ -24,6 +33,15 @@
               class="form-control"
               id="lastnameInput"
             />
+            <span
+              class="text-danger"
+              *ngIf="
+                signupForm.controls['lastname'].dirty &&
+                signupForm.hasError('required', 'lastname')
+              "
+            >
+              *Last name required
+            </span>
           </div>
           <hr class="my-5" />
           <div class="mb-3">
@@ -35,6 +53,15 @@
               id="emailInput"
               aria-describedby="emailHelp"
             />
+            <span
+              class="text-danger"
+              *ngIf="
+                signupForm.controls['email'].dirty &&
+                signupForm.hasError('required', 'email')
+              "
+            >
+              *Email required
+            </span>
           </div>
           <div class="mb-3">
             <label for="passwordInput" class="form-label">Password</label>
@@ -44,9 +71,22 @@
               class="form-control"
               id="passwordInput"
             />
+            <span
+              class="text-danger"
+              *ngIf="
+                signupForm.controls['password'].dirty &&
+                signupForm.hasError('required', 'password')
+              "
+            >
+              *Password required
+            </span>
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button type="submit" class="btn btn-success fw-bold">
+            <button
+              [disabled]="!signupForm.valid"
+              type="submit"
+              class="btn btn-success fw-bold"
+            >
               Sign Up
             </button>
           </div>
