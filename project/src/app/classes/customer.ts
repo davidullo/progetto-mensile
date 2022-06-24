@@ -8,13 +8,36 @@ export class Customer implements ICustomer {
   lastname!: string;
   address!: IAddress;
   email!: string;
+  number!: string;
   password!: string;
+  area!: string;
+  bar!: boolean;
+  restaurant!: boolean;
+  shower!: boolean;
+  waiter!: boolean;
 
-  constructor(name: string, lastname: string, email: string, password: string) {
+  constructor(
+    name: string,
+    lastname: string,
+    email: string,
+    number: string,
+    password: string,
+    area: string,
+    bar: boolean,
+    restaurant: boolean,
+    shower: boolean,
+    waiter: boolean
+  ) {
     this.name = name;
     this.lastname = lastname;
     this.email = email;
+    this.number = number;
     this.password = password;
-    this.address = new Address('', '', '', '');
+    this.area = area;
+    this.bar = bar;
+    this.restaurant = restaurant;
+    this.shower = shower;
+    this.waiter = waiter;
+    this.address = new Address('', '', '', '', '', '');
   }
 }

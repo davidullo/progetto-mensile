@@ -22,8 +22,26 @@
       <input
         class="form-control"
         type="text"
+        name="beachName"
+        placeholder="Beach Name"
+        [(ngModel)]="customer.address.beachName"
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+        class="form-control"
+        type="text"
+        name="beachNumber"
+        placeholder="Beach Telephone Number"
+        [(ngModel)]="customer.address.beachNumber"
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+        class="form-control"
+        type="text"
         name="street"
-        placeholder="Street"
+        placeholder="Beach Street"
         [(ngModel)]="customer.address.street"
       />
     </div>
@@ -32,7 +50,7 @@
         class="form-control"
         type="text"
         name="city"
-        placeholder="City"
+        placeholder="Beach City"
         [(ngModel)]="customer.address.city"
       />
     </div>
@@ -41,7 +59,7 @@
         class="form-control"
         type="text"
         name="state"
-        placeholder="State"
+        placeholder="Beach State"
         [(ngModel)]="customer.address.state"
       />
     </div>
@@ -50,7 +68,7 @@
         class="form-control"
         type="text"
         name="zip"
-        placeholder="ZIP"
+        placeholder="Beach ZIP"
         [(ngModel)]="customer.address.zip"
       />
     </div>
@@ -59,8 +77,17 @@
         class="form-control"
         type="email"
         name="email"
-        placeholder="Email"
+        placeholder="Owner Email"
         [(ngModel)]="customer.email"
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+        class="form-control"
+        type="text"
+        name="number"
+        placeholder="Owner Telephone Number"
+        [(ngModel)]="customer.number"
       />
     </div>
     <div class="col-12 col-md-6">
@@ -73,8 +100,53 @@
       />
     </div>
     <div class="col-12 col-md-6">
-      <button class="btn btn-primary" (click)="saveNewUser()">Salva</button>
-      <button class="btn btn-warning" (click)="editUser()">Modifica</button>
+      <input
+        class="form-control"
+        type="text"
+        name="area"
+        placeholder="Beach Area"
+        [(ngModel)]="customer.area"
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+        class="form-control"
+        type="text"
+        name="bar"
+        placeholder="Bar"
+        [(ngModel)]="customer.bar"
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+        class="form-control"
+        type="text"
+        name="restaurant"
+        placeholder="Restaurant"
+        [(ngModel)]="customer.restaurant"
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+        class="form-control"
+        type="text"
+        name="shower"
+        placeholder="Shower"
+        [(ngModel)]="customer.shower"
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+        class="form-control"
+        type="text"
+        name="waiter"
+        placeholder="Waiter service"
+        [(ngModel)]="customer.waiter"
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <button class="btn btn-primary" (click)="saveNewUser()">Save</button>
+      <button class="btn btn-warning" (click)="editUser()">Edit</button>
     </div>
   </div>
 </form>
@@ -84,10 +156,13 @@
       <th>ID</th>
       <th>Name</th>
       <th>Last Name</th>
-      <th>Email</th>
-      <th>Indirizzo</th>
-      <th>Modifica</th>
-      <th>Cancella</th>
+      <th>Personal Email</th>
+      <th>Personal Number</th>
+      <th>Beach details</th>
+      <th>Area</th>
+      <th>Services</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -96,13 +171,30 @@
       <td>{{ customer.name }}</td>
       <td>{{ customer.lastname }}</td>
       <td>{{ customer.email }}</td>
-      <td><button class="btn btn-primary">Mostra Indirizzo</button></td>
+      <td>{{ customer.number }}</td>
       <td>
-        <button class="btn btn-warning" (click)="editUser()">Modifica</button>
+        {{ customer.address.beachName }} <br />
+        {{ customer.address.beachNumber }} <br />
+        {{ customer.address.street }} <br />
+        {{ customer.address.city }} <br />
+        {{ customer.address.state }} <br />
+        {{ customer.address.zip }}
+      </td>
+      <td>{{ customer.area }}</td>
+      <td>
+        {{ customer.bar }} <br />
+        {{ customer.restaurant }} <br />
+        {{ customer.shower }} <br />
+        {{ customer.waiter }} <br />
+      </td>
+
+      <!-- <td><button class="btn btn-primary">Mostra Indirizzo</button></td> -->
+      <td>
+        <button class="btn btn-warning" (click)="editUser()">Edit</button>
       </td>
       <td>
         <button class="btn btn-danger" (click)="removeUser(customer.id)">
-          Cancella
+          Delete
         </button>
       </td>
     </tr>
