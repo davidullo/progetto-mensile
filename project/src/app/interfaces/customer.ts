@@ -9,8 +9,8 @@ export interface ICustomer {
   number: string;
   password: string;
   area: string;
-  bar: boolean;
-  restaurant: boolean;
-  shower: boolean;
-  waiter: boolean;
+  bar: boolean | string;
+  restaurant: boolean | string;
+  shower: boolean | string;
+  waiter: boolean | string;
 }
