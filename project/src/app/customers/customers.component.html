@@ -1,191 +1,246 @@
-<form class="form-control" action="">
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="name"
-        placeholder="Name"
-        [(ngModel)]="customer.name"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="lastname"
-        placeholder="Last name"
-        [(ngModel)]="customer.lastname"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="beachName"
-        placeholder="Beach Name"
-        [(ngModel)]="customer.address.beachName"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="beachNumber"
-        placeholder="Beach Telephone Number"
-        [(ngModel)]="customer.address.beachNumber"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="street"
-        placeholder="Beach Street"
-        [(ngModel)]="customer.address.street"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="city"
-        placeholder="Beach City"
-        [(ngModel)]="customer.address.city"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="state"
-        placeholder="Beach State"
-        [(ngModel)]="customer.address.state"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="zip"
-        placeholder="Beach ZIP"
-        [(ngModel)]="customer.address.zip"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="email"
-        name="email"
-        placeholder="Owner Email"
-        [(ngModel)]="customer.email"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="number"
-        placeholder="Owner Telephone Number"
-        [(ngModel)]="customer.number"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="password"
-        name="password"
-        placeholder="Password"
-        [(ngModel)]="customer.password"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="beachDescription"
-        placeholder="Description"
-        [(ngModel)]="customer.address.beachDescription"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="area"
-        placeholder="Beach Area (in m²)"
-        [(ngModel)]="customer.area"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="bar"
-        placeholder="Bar"
-        [(ngModel)]="customer.bar"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="restaurant"
-        placeholder="Restaurant"
-        [(ngModel)]="customer.restaurant"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="shower"
-        placeholder="Shower"
-        [(ngModel)]="customer.shower"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="waiter"
-        placeholder="Waiter service"
-        [(ngModel)]="customer.waiter"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="photo1"
-        placeholder="Photo 1"
-        [(ngModel)]="customer.photo1"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="photo2"
-        placeholder="Photo 2"
-        [(ngModel)]="customer.photo2"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <input
-        class="form-control"
-        type="text"
-        name="photo3"
-        placeholder="Photo 3"
-        [(ngModel)]="customer.photo3"
-      />
-    </div>
-    <div class="col-12 col-md-6">
-      <button class="btn btn-primary" (click)="saveNewUser()">Save</button>
-      <button class="btn btn-warning" (click)="editUser()">Edit</button>
+<div class="container-flex m-5">
+  <div class="row d-flex justify-content-between">
+    <div class="col-12"><h1 class="fw-bolder display-1">Beaches List</h1></div>
+    <div class="col-12">
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#modalNewBeach"
+      >
+        New Beach
+      </button>
     </div>
   </div>
-</form>
+</div>
+
+<div
+  class="modal fade"
+  id="modalNewBeach"
+  tabindex="-1"
+  aria-labelledby="newBeachLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newBeachLabel">Add New Beach</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form class="form-control" action="">
+          <div class="row g-2">
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="name"
+                placeholder="Name"
+                [(ngModel)]="customer.name"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="lastname"
+                placeholder="Last name"
+                [(ngModel)]="customer.lastname"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="beachName"
+                placeholder="Beach Name"
+                [(ngModel)]="customer.address.beachName"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="beachNumber"
+                placeholder="Beach Telephone Number"
+                [(ngModel)]="customer.address.beachNumber"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="street"
+                placeholder="Beach Street"
+                [(ngModel)]="customer.address.street"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="city"
+                placeholder="Beach City"
+                [(ngModel)]="customer.address.city"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="state"
+                placeholder="Beach State"
+                [(ngModel)]="customer.address.state"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="zip"
+                placeholder="Beach ZIP"
+                [(ngModel)]="customer.address.zip"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="email"
+                name="email"
+                placeholder="Owner Email"
+                [(ngModel)]="customer.email"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="number"
+                placeholder="Owner Telephone Number"
+                [(ngModel)]="customer.number"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="password"
+                name="password"
+                placeholder="Password"
+                [(ngModel)]="customer.password"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="beachDescription"
+                placeholder="Description"
+                [(ngModel)]="customer.address.beachDescription"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="area"
+                placeholder="Beach Area (in m²)"
+                [(ngModel)]="customer.area"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="bar"
+                placeholder="Bar"
+                [(ngModel)]="customer.bar"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="restaurant"
+                placeholder="Restaurant"
+                [(ngModel)]="customer.restaurant"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="shower"
+                placeholder="Shower"
+                [(ngModel)]="customer.shower"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="waiter"
+                placeholder="Waiter service"
+                [(ngModel)]="customer.waiter"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="photo1"
+                placeholder="Photo 1 (URL)"
+                [(ngModel)]="customer.photo1"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="photo2"
+                placeholder="Photo 2 (URL)"
+                [(ngModel)]="customer.photo2"
+              />
+            </div>
+            <div class="col-12 col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                name="photo3"
+                placeholder="Photo 3 (URL)"
+                [(ngModel)]="customer.photo3"
+              />
+            </div>
+            <!-- <div class="col-12 col-md-6">
+              <button class="btn btn-primary" (click)="saveNewUser()">
+                Save
+              </button>
+              <button class="btn btn-warning" (click)="editUser()">Edit</button>
+            </div> -->
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="saveNewUser()"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
