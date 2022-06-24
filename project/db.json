@@ -1,45 +1,29 @@
 {
   "customers": [
     {
-      "name": "Dara Wagner",
-      "lastname": "Knapp",
-      "email": "pydoryjaca@mailinator.com",
-      "number": "203",
-      "password": "Pa$$w0rd!",
-      "area": "Possimus et fuga M",
-      "bar": "Odit ad laborum Ut ",
-      "restaurant": "Rem quia sed consequ",
-      "shower": "Rem eum ipsa suscip",
-      "waiter": "Eos aperiam molesti",
+      "name": "Mimmo",
+      "lastname": "Fantasia",
+      "email": "test@io.it",
+      "number": "4378543785438",
+      "password": "iausdgiagsd29328",
+      "area": "1200",
+      "bar": "true",
+      "restaurant": "true",
+      "shower": "true",
+      "waiter": "true",
+      "photo1": "https://images.unsplash.com/photo-1655992944141-a16e719b3287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "photo2": "https://images.unsplash.com/photo-1559494007-9f5847c49d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "photo3": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&q=80",
       "address": {
-        "number": "",
-        "street": "Quis esse autem qui",
-        "city": "In sunt in ipsum ani",
-        "state": "Rerum mollitia rerum",
-        "zip": "16723"
+        "beachName": "The Beach Club",
+        "beachDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "beachNumber": "019238747",
+        "street": "Via dell'invenzione",
+        "city": "Soverato",
+        "state": "Italia",
+        "zip": "88060"
       },
-      "id": 13
-    },
-    {
-      "name": "Imelda Suarez",
-      "lastname": "Whitaker",
-      "email": "lapoxu@mailinator.com",
-      "number": "44",
-      "password": "Pa$$w0rd!",
-      "area": "Laborum Voluptatem ",
-      "bar": "Id ut dolorum libero",
-      "restaurant": "Minim dolor exercita",
-      "shower": "Dolorem dolor elit ",
-      "waiter": "Aut nisi temporibus ",
-      "address": {
-        "beachName": "Reese Graham",
-        "beachNumber": "997",
-        "street": "Eum veniam magni es",
-        "city": "Necessitatibus quo n",
-        "state": "Fugiat minim eum at ",
-        "zip": "26334"
-      },
-      "id": 14
+      "id": 1
     }
   ],
   "signupUsers": [

@@ -1,0 +1,21 @@
+.td-desc {
+  display: flex;
+  justify-content: center;
+  .beach-description {
+    max-width: 300px;
+    max-height: 200px;
+    overflow: scroll;
+  }
+}
+.beachPics {
+  div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    img {
+      width: 50px;
+      height: auto;
+      margin: 10px;
+    }
+  }
+}

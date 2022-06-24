@@ -13,4 +13,7 @@ export interface ICustomer {
   restaurant: boolean | string;
   shower: boolean | string;
   waiter: boolean | string;
+  photo1: string;
+  photo2: string;
+  photo3: string;
 }

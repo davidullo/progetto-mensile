@@ -15,6 +15,9 @@ export class Customer implements ICustomer {
   restaurant!: boolean | string;
   shower!: boolean | string;
   waiter!: boolean | string;
+  photo1!: string;
+  photo2!: string;
+  photo3!: string;
 
   constructor(
     name: string,
@@ -26,7 +29,10 @@ export class Customer implements ICustomer {
     bar: boolean | string,
     restaurant: boolean | string,
     shower: boolean | string,
-    waiter: boolean | string
+    waiter: boolean | string,
+    photo1: string,
+    photo2: string,
+    photo3: string
   ) {
     this.name = name;
     this.lastname = lastname;
@@ -38,6 +44,9 @@ export class Customer implements ICustomer {
     this.restaurant = restaurant;
     this.shower = shower;
     this.waiter = waiter;
-    this.address = new Address('', '', '', '', '', '');
+    this.photo1 = photo1;
+    this.photo2 = photo2;
+    this.photo3 = photo3;
+    this.address = new Address('', '', '', '', '', '', '');
   }
 }

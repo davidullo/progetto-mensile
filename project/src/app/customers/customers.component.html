@@ -103,8 +103,17 @@
       <input
         class="form-control"
         type="text"
+        name="beachDescription"
+        placeholder="Description"
+        [(ngModel)]="customer.address.beachDescription"
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+        class="form-control"
+        type="text"
         name="area"
-        placeholder="Beach Area"
+        placeholder="Beach Area (in m²)"
         [(ngModel)]="customer.area"
       />
     </div>
@@ -145,6 +154,33 @@
       />
     </div>
     <div class="col-12 col-md-6">
+      <input
+        class="form-control"
+        type="text"
+        name="photo1"
+        placeholder="Photo 1"
+        [(ngModel)]="customer.photo1"
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+        class="form-control"
+        type="text"
+        name="photo2"
+        placeholder="Photo 2"
+        [(ngModel)]="customer.photo2"
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <input
+        class="form-control"
+        type="text"
+        name="photo3"
+        placeholder="Photo 3"
+        [(ngModel)]="customer.photo3"
+      />
+    </div>
+    <div class="col-12 col-md-6">
       <button class="btn btn-primary" (click)="saveNewUser()">Save</button>
       <button class="btn btn-warning" (click)="editUser()">Edit</button>
     </div>
@@ -159,8 +195,10 @@
       <th>Personal Email</th>
       <th>Personal Number</th>
       <th>Beach details</th>
+      <th>Description</th>
       <th>Area</th>
       <th>Services</th>
+      <th>Photos</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -173,22 +211,35 @@
       <td>{{ customer.email }}</td>
       <td>{{ customer.number }}</td>
       <td>
-        {{ customer.address.beachName }} <br />
-        {{ customer.address.beachNumber }} <br />
-        {{ customer.address.street }} <br />
-        {{ customer.address.city }} <br />
-        {{ customer.address.state }} <br />
-        {{ customer.address.zip }}
+        Name: {{ customer.address.beachName }} <br />
+        Telephone number: {{ customer.address.beachNumber }} <br />
+        Street: {{ customer.address.street }} <br />
+        City: {{ customer.address.city }} <br />
+        State: {{ customer.address.state }} <br />
+        ZIP code: {{ customer.address.zip }}
       </td>
-      <td>{{ customer.area }}</td>
+      <td class="td-desc">
+        <div class="beach-description">
+          {{ customer.address.beachDescription }}
+        </div>
+      </td>
+      <td>{{ customer.area }} m²</td>
       <td>
-        {{ customer.bar }} <br />
-        {{ customer.restaurant }} <br />
-        {{ customer.shower }} <br />
-        {{ customer.waiter }} <br />
+        Bar: {{ customer.bar }} <br />
+        Restaurant: {{ customer.restaurant }} <br />
+        Shower: {{ customer.shower }} <br />
+        Waiter service: {{ customer.waiter }} <br />
+      </td>
+      <td class="beachPics">
+        <div>
+          <img src="{{ customer.photo1 }}" alt="" /> <br />
+          <img src="{{ customer.photo2 }}" alt="" /><br />
+          <img src="{{ customer.photo3 }}" alt="" /> <br />
+        </div>
       </td>
 
       <!-- <td><button class="btn btn-primary">Mostra Indirizzo</button></td> -->
+
       <td>
         <button class="btn btn-warning" (click)="editUser()">Edit</button>
       </td>

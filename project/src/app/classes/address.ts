@@ -2,6 +2,7 @@ import { IAddress } from '../interfaces/address';
 
 export class Address implements IAddress {
   beachName: string;
+  beachDescription: string;
   beachNumber: string;
   street: string;
   city: string;
@@ -10,6 +11,7 @@ export class Address implements IAddress {
 
   constructor(
     beachName: string,
+    beachDescription: string,
     beachNumber: string,
     street: string,
     city: string,
@@ -17,6 +19,7 @@ export class Address implements IAddress {
     zip: string
   ) {
     this.beachName = beachName;
+    this.beachDescription = beachDescription;
     this.beachNumber = beachNumber;
     this.street = street;
     this.city = city;
