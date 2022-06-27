@@ -1,1 +1,52 @@
-<p>home works!</p>
+<div
+  class="container-flex homePhoto d-flex justify-content-center align-items-center"
+>
+  <div class="row">
+    <div class="col-12">
+      <!-- <img src="../../assets/home.jpg" alt="" /> -->
+      <div
+        class="container-flex container-md d-flex justify-content-center align-items-center"
+      >
+        <form action="" class="form-control p-4" id="whereForm">
+          <div class="" id="whereInput">
+            <label for="formGroupExampleInput" class="form-label"
+              >Where do you want to go?</label
+            >
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              id="formGroupExampleInput"
+              placeholder="Enter a City"
+            />
+            <div class="d-grid mt-2">
+              <button type="submit" class="btn btn-success">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-flex mt-3" id="homeCards">
+  <div class="row" id="homeCardsRow">
+    <div
+      class="col-12 d-flex flex-wrap justify-content-center"
+      id="homeCardsCol"
+    >
+      <div class="card m-3" style="width: 18rem" *ngFor="let card of customers">
+        <img src="{{ card.photo1 }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ card.address.beachName }}</h5>
+          <p class="card-text overflow-scroll">
+            {{ card.address.beachDescription }}
+          </p>
+          <a href="#" class="btn btn-primary">Check</a>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-xs-6 col-md-2"></div>
+    <div class="col-xs-6 col-md-2"></div>
+    <div class="col-xs-6 col-md-2"></div>
+    <div class="col-xs-6 col-md-2"></div> -->
+  </div>
+</div>

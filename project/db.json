@@ -49,9 +49,34 @@
         "zip": "98473"
       },
       "id": 2
+    },
+    {
+      "name": "Gigi",
+      "lastname": "Marzulli",
+      "email": "Gigi@Marzulli.co.uk",
+      "number": "12312534",
+      "password": "fsf9f9934ffer",
+      "area": "390",
+      "bar": "true",
+      "restaurant": "false",
+      "shower": "true",
+      "waiter": "true",
+      "photo1": "https://images.unsplash.com/photo-1521170813716-0b3f42fcfb65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "photo2": "https://images.unsplash.com/photo-1535262412227-85541e910204?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+      "photo3": "https://images.unsplash.com/photo-1591797762236-77dd6dcaa956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+      "address": {
+        "beachName": "Aquarius",
+        "beachDescription": "Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat",
+        "beachNumber": "92382863685",
+        "street": "Viale Augusto 23",
+        "city": "Palermo",
+        "state": "Italia",
+        "zip": "184382"
+      },
+      "id": 3
     }
   ],
-  "signupUsers": [
+  "users": [
     {
       "name": "Scott Holman",
       "lastname": "Fitzpatrick",
@@ -72,6 +97,27 @@
       "email": "admin@admin.it",
       "password": "adminpassword1234",
       "id": 3
+    },
+    {
+      "name": "Fabio",
+      "lastname": "Test",
+      "email": "dfsdasfgd@2902932.it",
+      "password": "test1234",
+      "id": 4
+    },
+    {
+      "email": "sdbfsiu@test.io",
+      "password": "$2a$10$jjrS9q705xVkeMxQ8BObg.hrkImQ4MHY6R61uBlRgk36djFPy6Jd2",
+      "name": "davide",
+      "lastname": "test",
+      "id": 5
+    },
+    {
+      "email": "ttttt@gmail.com",
+      "password": "$2a$10$iEsTptDBbfcZnBgjon4oLuRN5TCibk8mjvLqmbFJ.66kAnnthOQJa",
+      "name": "asdjhiasd",
+      "lastname": "dffgdfg",
+      "id": 6
     }
   ],
   "bookings": [
