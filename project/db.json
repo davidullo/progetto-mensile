@@ -58,6 +58,20 @@
       "email": "loku@mailinator.com",
       "password": "Pa$$w0rd!",
       "id": 1
+    },
+    {
+      "name": "Admin",
+      "lastname": "Admin",
+      "email": "admin@admin.it",
+      "password": "adminpassword1234",
+      "id": 2
+    },
+    {
+      "name": "Admin",
+      "lastname": "Admin",
+      "email": "admin@admin.it",
+      "password": "adminpassword1234",
+      "id": 3
     }
   ],
   "bookings": [
