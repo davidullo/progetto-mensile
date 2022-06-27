@@ -17,11 +17,14 @@
   height: 200px;
 }
 
-#homeCards {
-}
+// #homeCards {
+// }
 
-.card .card-body .card-text {
-  height: 100px;
+.card {
+  width: 18rem;
+  .card-body .card-text {
+    height: 100px;
+  }
 }
 
 // #whereInput {

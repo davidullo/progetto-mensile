@@ -33,7 +33,7 @@
       class="col-12 d-flex flex-wrap justify-content-center"
       id="homeCardsCol"
     >
-      <div class="card m-3" style="width: 18rem" *ngFor="let card of customers">
+      <div class="card m-3" *ngFor="let card of customers">
         <img src="{{ card.photo1 }}" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{{ card.address.beachName }}</h5>
