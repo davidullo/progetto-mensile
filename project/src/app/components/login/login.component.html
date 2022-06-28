@@ -7,25 +7,22 @@
           <h6>Please enter your Email and Password.</h6>
         </div>
         <form
-          #formLogin="ngForm"
-          [formGroup]="loginForm"
-          (ngSubmit)="login()"
+          #loginForm="ngForm"
+          (ngSubmit)="onSubmit(loginForm)"
           class="needs-validation"
         >
           <div class="mb-3">
             <label for="emailInput" class="form-label">Email address</label>
             <input
-              formControlName="email"
               type="email"
               class="form-control"
               id="emailInput"
               ngModel
               name="email"
               required
-              password
-              minlength="6"
+              email
             />
-            <span
+            <!-- <span
               class="text-danger"
               *ngIf="
                 loginForm.controls['email'].dirty &&
@@ -33,12 +30,11 @@
               "
             >
               *Email required
-            </span>
+            </span> -->
           </div>
           <div class="mb-3">
             <label for="passwordInput" class="form-label">Password</label>
             <input
-              formControlName="password"
               type="password"
               class="form-control"
               id="passwordInput"
@@ -48,7 +44,7 @@
               password
               minlength="6"
             />
-            <span
+            <!-- <span
               class="text-danger"
               *ngIf="
                 loginForm.controls['password'].dirty &&
@@ -56,13 +52,13 @@
               "
             >
               *Password required
-            </span>
+            </span> -->
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button
-              [disabled]="!loginForm.valid"
               type="submit"
               class="btn btn-success fw-bold"
+              [disabled]="!loginForm.valid"
             >
               Login
             </button>

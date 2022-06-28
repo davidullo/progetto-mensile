@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,18 +25,23 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  signUp() {
-    this.http
-      .post<any>('http://localhost:4201/register', this.signupForm.value)
-      .subscribe(
-        (res) => {
-          alert('Signup Successful!');
-          this.signupForm.reset();
-          this.router.navigate(['login']);
-        },
-        (err) => {
-          alert('Something went wrong.');
-        }
-      );
+  // signUp() {
+  //   this.http
+  //     .post<any>('http://localhost:4201/register', this.signupForm.value)
+  //     .subscribe(
+  //       (res) => {
+  //         alert('Signup Successful!');
+  //         this.signupForm.reset();
+  //         this.router.navigate(['login']);
+  //       },
+  //       (err) => {
+  //         alert('Something went wrong.');
+  //       }
+  //     );
+  // }
+
+  onSubmit(form: NgForm) {
+    console.log(form.value);
+    form.reset();
   }
 }

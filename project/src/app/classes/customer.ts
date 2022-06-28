@@ -3,7 +3,7 @@ import { ICustomer } from '../interfaces/customer';
 import { Address } from '../classes/address';
 
 export class Customer implements ICustomer {
-  id!: number;
+  id!: any;
   name!: string;
   lastname!: string;
   address!: IAddress;

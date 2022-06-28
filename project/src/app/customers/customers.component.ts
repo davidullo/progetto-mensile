@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../classes/customer';
 import { CustomerService } from './customer.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-customers',
@@ -24,6 +25,7 @@ export class CustomersComponent implements OnInit {
     '',
     ''
   );
+  isFetching: boolean | undefined;
 
   constructor(private customerSvc: CustomerService) {}
 
@@ -32,20 +34,37 @@ export class CustomersComponent implements OnInit {
     // this.customers = customers;
     // });
 
-    this.customerSvc.getAllUsers().subscribe((customers) => {
-      this.customers = customers;
-    });
+    this.isFetching = true;
+
+    this.customerSvc
+      .getAllCustomers()
+      .pipe(
+        map((res) => {
+          for (const key in res) {
+            if (res.hasOwnProperty(key)) {
+              this.customers.push({ ...res[key], id: key });
+            }
+          }
+          return this.customers;
+        })
+      )
+      .subscribe((customers) => {
+        this.isFetching = false;
+        this.customers = customers;
+      });
   }
 
-  saveNewUser() {
-    this.customerSvc.createUser(this.customer).subscribe((res: Customer) => {
-      console.log(res);
-      this.customers.push(res);
-    });
+  saveNewCustomer() {
+    this.customerSvc
+      .createCustomer(this.customer)
+      .subscribe((res: Customer) => {
+        console.log(res);
+        this.customers.push(res);
+      });
   }
 
-  removeUser(id: number) {
-    this.customerSvc.deleteUser(id).subscribe((res) => {
+  removeCustomer(id: number) {
+    this.customerSvc.deleteCustomer(id).subscribe((res) => {
       console.log(res);
       this.customers = this.customers.filter((c) => c.id != id);
     });
@@ -55,11 +74,15 @@ export class CustomersComponent implements OnInit {
     this.customer = customer;
   }
 
-  editUser() {
-    this.customerSvc.updateUser(this.customer).subscribe((res: Customer) => {
-      console.log(res);
-      let index = this.customers.findIndex((customer) => customer.id == res.id);
-      this.customers.splice(index, 1, res);
-    });
+  editCustomer() {
+    this.customerSvc
+      .updateCustomer(this.customer)
+      .subscribe((res: Customer) => {
+        console.log(res);
+        let index = this.customers.findIndex(
+          (customer) => customer.id == res.id
+        );
+        this.customers.splice(index, 1, res);
+      });
   }
 }

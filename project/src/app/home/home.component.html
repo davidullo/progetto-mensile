@@ -28,6 +28,14 @@
   </div>
 </div>
 <div class="container-flex mt-3" id="homeCards">
+  <div
+    class="d-flex justify-content-center text-success mt-5"
+    *ngIf="isFetching"
+  >
+    <div class="spinner-grow" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
   <div class="row" id="homeCardsRow">
     <div
       class="col-12 d-flex flex-wrap justify-content-center"

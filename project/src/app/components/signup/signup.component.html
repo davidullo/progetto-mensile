@@ -6,22 +6,16 @@
           <h1>Sign up</h1>
           <h6>Please enter your details.</h6>
         </div>
-        <form
-          #formSignup="ngForm"
-          [formGroup]="signupForm"
-          (ngSubmit)="signUp()"
-        >
+        <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
           <div class="mb-3">
             <label for="nameInput" class="form-label">Name</label>
             <input
-              formControlName="name"
               type="text"
               class="form-control"
               id="nameInput"
               ngModel
               name="name"
               required
-              name
             />
             <span
               class="text-danger"
@@ -36,14 +30,12 @@
           <div class="mb-3">
             <label for="lastnameInput" class="form-label">Last name</label>
             <input
-              formControlName="lastname"
               type="text"
               class="form-control"
               id="lastnameInput"
               ngModel
               name="lastname"
               required
-              lastname
             />
             <span
               class="text-danger"
@@ -59,7 +51,6 @@
           <div class="mb-3">
             <label for="emailInput" class="form-label">Email address</label>
             <input
-              formControlName="email"
               type="email"
               class="form-control"
               id="emailInput"
@@ -69,7 +60,7 @@
               required
               email
             />
-            <span
+            <!-- <span
               class="text-danger"
               *ngIf="
                 signupForm.controls['email'].dirty &&
@@ -77,22 +68,20 @@
               "
             >
               *Email required
-            </span>
+            </span> -->
           </div>
           <div class="mb-3">
             <label for="passwordInput" class="form-label">Password</label>
             <input
-              formControlName="password"
               type="password"
               class="form-control"
               id="passwordInput"
               ngModel
               name="password"
               required
-              password
               minlength="6"
             />
-            <span
+            <!-- <span
               class="text-danger"
               *ngIf="
                 signupForm.controls['password'].dirty &&
@@ -100,7 +89,7 @@
               "
             >
               *Password required
-            </span>
+            </span> -->
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button

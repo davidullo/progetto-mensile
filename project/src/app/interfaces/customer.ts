@@ -1,7 +1,7 @@
 import { IAddress } from './address';
 
 export interface ICustomer {
-  id: number;
+  id?: any;
   name: string;
   lastname: string;
   address: IAddress;

@@ -8,29 +8,29 @@ import { Customer } from '../classes/customer';
 export class CustomerService {
   constructor(private http: HttpClient) {}
 
-  apiUrl = 'http://localhost:4201/customers';
+  apiUrl =
+    'https://lidi-52fb3-default-rtdb.europe-west1.firebasedatabase.app/customers.json';
+  isFetching = false;
 
   // getAllUsers(customers: Customer[]) {
   //  return this.http.get<Customer[]>(this.apiUrl);
   //}
 
-  getAllUsers() {
+  getAllCustomers() {
+    this.isFetching = true;
     return this.http.get<Customer[]>(this.apiUrl);
   }
 
-  createUser(customer: Customer) {
+  createCustomer(customer: Customer) {
     // indirizzo da chiamare e dato da inserire come parametri
     return this.http.post<Customer>(this.apiUrl, customer);
   }
 
-  deleteUser(id: number) {
-    return this.http.delete<Customer>(
-      this.apiUrl + '/' + id
-      //customer
-    );
+  deleteCustomer(id: number) {
+    return this.http.delete<Customer>(this.apiUrl + '/' + id);
   }
 
-  updateUser(customer: Customer) {
+  updateCustomer(customer: Customer) {
     return this.http.patch<Customer>(this.apiUrl + '/' + customer.id, customer);
   }
 }
