@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth.service';
+import { Observable } from 'rxjs';
+import { AuthService, AuthResponseData } from 'src/app/auth.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -61,7 +62,19 @@ export class LoginComponent implements OnInit {
     }
     const email = form.value.email;
     const password = form.value.password;
-    // this.authService.signup(email, password);
+    let authObs: Observable<AuthResponseData>;
+    authObs = this.authService.login(email, password);
+
+    authObs.subscribe(
+      (res) => {
+        console.log(res);
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+
     form.reset();
   }
 }
