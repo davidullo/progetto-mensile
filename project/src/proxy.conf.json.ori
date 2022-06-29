@@ -1,0 +1,10 @@
+{
+  "https://identitytoolkit.googleapis.com/v1/": {
+    "target": "http://localhost:4200",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}
