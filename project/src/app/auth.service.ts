@@ -5,9 +5,10 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { User } from './models/user.model';
 import { tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 export interface AuthResponseData {
   kind: string;
@@ -23,14 +24,16 @@ export interface AuthResponseData {
   providedIn: 'root',
 })
 export class AuthService implements HttpInterceptor {
-  user = new Subject<User>();
+  user = new BehaviorSubject<User>(null);
+
+  constructor(private http: HttpClient, private router: Router) {}
+
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     const modifiedRequest = req.clone({
       headers: req.headers.append('Auth', 'xyz'),
     });
     return next.handle(modifiedRequest);
   }
-  constructor(private http: HttpClient) {}
   // isLoggedIn: boolean = false;
 
   signup(email: string, password: string) {
@@ -76,6 +79,12 @@ export class AuthService implements HttpInterceptor {
         })
       );
   }
+
+  logout() {
+    this.user.next(null);
+    this.router.navigate(['/']);
+  }
+
   private handleAuthentication(
     email: string,
     userId: string,

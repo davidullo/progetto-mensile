@@ -3,6 +3,7 @@ import { Customer } from '../classes/customer';
 import { CustomerService } from './customer.service';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-customers',
@@ -30,7 +31,11 @@ export class CustomersComponent implements OnInit {
   apiUrl =
     'https://lidi-52fb3-default-rtdb.europe-west1.firebasedatabase.app/customers.json';
 
-  constructor(private http: HttpClient, private customerSvc: CustomerService) {}
+  constructor(
+    private http: HttpClient,
+    private customerSvc: CustomerService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     // this.customerSvc.getAllUsers().subscribe((customers) => {

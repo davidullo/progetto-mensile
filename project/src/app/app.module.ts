@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './auth.service';
 import { LoginService } from './components/login/login.service';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AuthInterceptorService } from './auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,11 @@ import { ProfileComponent } from './components/profile/profile.component';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoginService, multi: true },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })

@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { exhaustMap, take } from 'rxjs/operators';
+import { AuthService } from '../auth.service';
 import { Customer } from '../classes/customer';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CustomerService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   apiUrl =
     'https://lidi-52fb3-default-rtdb.europe-west1.firebasedatabase.app/customers.json';
@@ -15,6 +17,16 @@ export class CustomerService {
   // getAllUsers(customers: Customer[]) {
   //  return this.http.get<Customer[]>(this.apiUrl);
   //}
+
+  // getAllCustomers() {
+  //   this.isFetching = true;
+  //   this.authService.user.pipe(
+  //     take(1),
+  //     exhaustMap((user) => {
+  //       return this.http.get<Customer[]>(this.apiUrl);
+  //     })
+  //   );
+  // }
 
   getAllCustomers() {
     this.isFetching = true;
