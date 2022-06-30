@@ -34,6 +34,7 @@
               href="#"
               class="nav-link px-2 text-white"
               [routerLink]="['/customers']"
+              *ngIf="isAdmin"
               >Customers (private)</a
             >
           </li>

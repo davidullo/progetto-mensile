@@ -12,7 +12,6 @@ const routes: Routes = [
   {
     path: 'customers',
     canActivate: [AdminGuard],
-
     loadChildren: () =>
       import('./customers/customers.module').then((m) => m.CustomersModule),
   },

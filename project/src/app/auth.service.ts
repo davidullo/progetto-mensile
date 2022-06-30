@@ -31,7 +31,7 @@ export class AuthService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     const modifiedRequest = req.clone({
-      headers: req.headers.append('Auth', 'xyz'),
+      headers: req.headers.append('Auth', 'test'),
     });
     return next.handle(modifiedRequest);
   }
@@ -77,6 +77,7 @@ export class AuthService implements HttpInterceptor {
             res.idToken,
             +res.expiresIn
           );
+          // this.user = this.getUser(res.email);
         })
       );
   }
@@ -134,4 +135,8 @@ export class AuthService implements HttpInterceptor {
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
   }
+
+  // private getUser(token: string) {
+  //   return JSON.parse(atob(token.split('.')[1]));
+  // }
 }

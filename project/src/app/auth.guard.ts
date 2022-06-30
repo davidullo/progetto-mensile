@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivate {
     | UrlTree {
     return this.authService.user.pipe(
       map((user) => {
-        const isAuth = !!user;
+        const isAuth = !!user; // !!user means that if a value is truishy, it will return true. If a value is falsy, it will return false.
         if (isAuth) {
           return true;
         }
