@@ -1,9 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  // getUserRole(){
+  //   return JSON.parse(localStorage.getItem('logedUser') | '{}')?.email
+  // }
 }

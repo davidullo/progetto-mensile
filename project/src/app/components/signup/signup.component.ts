@@ -55,7 +55,7 @@ export class SignupComponent implements OnInit {
     authObs.subscribe(
       (res) => {
         console.log(res);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/home']);
       },
       (error) => {
         console.log(error);

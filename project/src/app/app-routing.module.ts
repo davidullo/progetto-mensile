@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from './admin.guard';
 import { AuthGuard } from './auth.guard';
 import { IntroComponent } from './components/intro/intro.component';
 import { LoginComponent } from './components/login/login.component';
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: '', component: IntroComponent },
   {
     path: 'customers',
-    canActivate: [AuthGuard],
+    canActivate: [AdminGuard],
+
     loadChildren: () =>
       import('./customers/customers.module').then((m) => m.CustomersModule),
   },
