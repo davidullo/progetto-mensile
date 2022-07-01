@@ -4,6 +4,7 @@ import { CustomerService } from './customer.service';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../auth.service';
+import { ICustomer } from '../interfaces/customer';
 
 @Component({
   selector: 'app-customers',
@@ -48,12 +49,13 @@ export class CustomersComponent implements OnInit {
       .getAllCustomers()
       .pipe(
         map((res) => {
+          const customersArray = [];
           for (const key in res) {
             if (res.hasOwnProperty(key)) {
-              this.customers.push({ ...res[key], id: key });
+              customersArray.push({ ...res[key], id: key });
             }
           }
-          return this.customers;
+          return customersArray;
         })
       )
       .subscribe((customers) => {
@@ -67,7 +69,7 @@ export class CustomersComponent implements OnInit {
       .createCustomer(this.customer)
       .subscribe((res: Customer) => {
         console.log(res);
-        this.customers.push(res);
+        // this.customers.push(res);
       });
   }
 
@@ -95,6 +97,7 @@ export class CustomersComponent implements OnInit {
   }
 
   storeCustomers() {
+    const customers = this.customerSvc.getAllCustomers();
     this.http.put(this.apiUrl, this.customers).subscribe((res) => {
       console.log(res);
     });
