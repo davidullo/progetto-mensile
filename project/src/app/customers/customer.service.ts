@@ -45,4 +45,8 @@ export class CustomerService {
   updateCustomer(customer: Customer) {
     return this.http.patch<Customer>(this.apiUrl + '/' + customer.id, customer);
   }
+
+  getID(id: number) {
+    return this.http.get(this.apiUrl);
+  }
 }

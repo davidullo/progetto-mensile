@@ -22,7 +22,13 @@
 .card {
   width: 18rem;
   .card-body .card-text {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
     height: 100px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
