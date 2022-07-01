@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.isAuthenticated = !!user; // that means -> this.isAuthenticated = !user ? false : true;
     });
     this.admin = localStorage.getItem('userData');
-    if (this.admin?.includes('S4FgtOnSkpVsKpWYp5StHwIn4md2')) {
+    if (this.admin?.includes('H4VDUwbCFTWTqcGiUIrQ10n4zak2')) {
       console.log('set as admin');
       this.isAdmin = true;
     } else {

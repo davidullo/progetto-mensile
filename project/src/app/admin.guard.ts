@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
+  Router,
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
@@ -12,7 +13,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class AdminGuard implements CanActivate {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -23,11 +24,11 @@ export class AdminGuard implements CanActivate {
     | UrlTree {
     // if admin includes the id of the admin, customers page will be accessible.
     let admin = localStorage.getItem('userData');
-    if (admin.includes('S4FgtOnSkpVsKpWYp5StHwIn4md2')) {
+    if (admin.includes('H4VDUwbCFTWTqcGiUIrQ10n4zak2')) {
       return true;
     } else {
       console.log('does not exists');
-      return false;
+      return this.router.createUrlTree(['/home']);
     }
   }
 }
