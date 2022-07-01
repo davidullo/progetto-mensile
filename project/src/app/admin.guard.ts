@@ -23,8 +23,7 @@ export class AdminGuard implements CanActivate {
     | UrlTree {
     // if admin includes the id of the admin, customers page will be accessible.
     let admin = localStorage.getItem('userData');
-    if (admin.includes('S4FgtOnSkpVsKpWYp5StHwIn4md2')) {
-      let adminPrivileges = true;
+    if (admin.includes('S4FgtOnSkpVcdsKpWYp5StHwIn4md2')) {
       return true;
     } else {
       console.log('does not exists');
