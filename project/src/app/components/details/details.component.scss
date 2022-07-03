@@ -1,5 +1,53 @@
 .carousel-item {
   max-height: 700px;
-  img {
+}
+
+#BeachTitleDetails {
+  letter-spacing: -3px;
+}
+
+#BeachLocationDetails {
+  letter-spacing: -1px;
+}
+
+#BeachDetailsDetails {
+  letter-spacing: -1px;
+}
+
+th {
+  letter-spacing: -1px;
+  font-size: 1.2rem;
+}
+
+#BeachDescriptionDetails {
+  letter-spacing: -0.5px;
+}
+
+#shareDetails {
+  padding: 10px 30px 10px 25px;
+  svg {
+    max-width: 26px;
+    max-height: 26px;
+    min-width: 16px;
+    min-height: 16px;
   }
+}
+
+#likeIconDetails {
+  color: red;
+}
+#separatorIconDetails {
+  color: gray;
+}
+#facebookIconDetails {
+  color: blue;
+}
+#twitterIconDetails {
+  color: skyblue;
+}
+#instagramIconDetails {
+  color: fuchsia;
+}
+#whatsappIconDetails {
+  color: green;
 }
