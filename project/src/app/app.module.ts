@@ -15,6 +15,7 @@ import { LoginService } from './components/login/login.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { FooterComponent } from './components/footer/footer.component';
+import { ExploreComponent } from './components/explore/explore.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     ProfileComponent,
     FooterComponent,
+    ExploreComponent,
   ],
   imports: [
     BrowserModule,
