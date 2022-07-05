@@ -56,26 +56,21 @@ export class DetailsComponent implements OnInit {
       this.getID(id);
     });
     this.getRestaurantBool();
-    console.log(this.single);
   }
 
   getID(id: number) {
     this.customerSvc.getID(id).subscribe({
       next: (res) => {
         this.details = res;
-        console.log(this.details);
         this.single = this.details[id];
-        console.log(this.single);
       },
     });
   }
 
   getRestaurantBool() {
     if (this.single.restaurant == true) {
-      console.log('restaurant is true');
       return true;
     } else {
-      console.log('restaurant is false');
       return false;
     }
   }
