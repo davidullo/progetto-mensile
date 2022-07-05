@@ -27,21 +27,9 @@ export class SearchComponent implements OnInit {
     ''
   );
 
-  location: Customer = new Customer(
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    ''
-  );
+  luogo: any = new Customer('', '', '', '', '', '', '', '', '', '', '', '', '');
+
+  searchText = '';
 
   constructor(
     private customerSvc: CustomerService,
@@ -50,21 +38,32 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.customerSvc
-      .getAllCustomers()
-      .pipe(
-        map((res) => {
-          for (const key in res) {
-            if (res.hasOwnProperty(key)) {
-              this.customers.push({ ...res[key], id: key });
-            }
-          }
-          return this.customers;
-        })
-      )
-      .subscribe((customers) => {
-        this.customers = customers;
+    this.getBeaches();
+  }
+
+  getBeaches() {
+    this.customerSvc.getAllCustomers().subscribe((res) => {
+      this.customers = res;
+      this.search();
+    });
+  }
+
+  searchKey(data: string) {
+    this.searchText = data;
+    this.search();
+  }
+
+  search() {
+    if (this.searchText == '') {
+      this.luogo = this.customers;
+      console.log(this.luogo);
+    } else {
+      this.luogo = this.customers.filter((e) => {
+        return e.address.state
+          ?.toLowerCase()
+          .includes(this.searchText.toLowerCase());
       });
+    }
   }
 
   // getState(state: string) {
