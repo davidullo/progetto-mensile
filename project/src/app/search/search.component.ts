@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Customer } from '../classes/customer';
 import { CustomerService } from '../customers/customer.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class SearchComponent implements OnInit {
   customers: Customer[] = [];
-  card: Customer = new Customer(
+  locations: any = new Customer(
     '',
     '',
     '',
@@ -26,11 +26,30 @@ export class HomeComponent implements OnInit {
     '',
     ''
   );
-  isFetching: boolean | undefined;
-  constructor(private customerSvc: CustomerService, private router: Router) {}
+
+  location: Customer = new Customer(
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
+  );
+
+  constructor(
+    private customerSvc: CustomerService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.isFetching = true;
     this.customerSvc
       .getAllCustomers()
       .pipe(
@@ -44,12 +63,16 @@ export class HomeComponent implements OnInit {
         })
       )
       .subscribe((customers) => {
-        this.isFetching = false;
         this.customers = customers;
       });
   }
 
-  onSubmit() {
-    this.router.navigate(['/search']);
-  }
+  // getState(state: string) {
+  //   this.customerSvc.getState(state).subscribe({
+  //     next: (res) => {
+  //       this.locations = res;
+  //       this.location = this.locations[state];
+  //     },
+  //   });
+  // }
 }

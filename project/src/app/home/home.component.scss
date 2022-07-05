@@ -21,6 +21,11 @@
 
 .card {
   width: 18rem;
+  transition: transform 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
   .card-body .card-text {
     -webkit-box-orient: vertical;
     display: -webkit-box;

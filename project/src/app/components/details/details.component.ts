@@ -55,7 +55,6 @@ export class DetailsComponent implements OnInit {
       let id = +p['id'];
       this.getID(id);
     });
-    this.getRestaurantBool();
   }
 
   getID(id: number) {
@@ -65,13 +64,5 @@ export class DetailsComponent implements OnInit {
         this.single = this.details[id];
       },
     });
-  }
-
-  getRestaurantBool() {
-    if (this.single.restaurant == true) {
-      return true;
-    } else {
-      return false;
-    }
   }
 }

@@ -49,4 +49,8 @@ export class CustomerService {
   getID(id: number) {
     return this.http.get(this.apiUrl);
   }
+
+  getState(state: string) {
+    return this.http.get(this.apiUrl);
+  }
 }
