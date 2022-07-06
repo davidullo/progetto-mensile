@@ -11,24 +11,22 @@
           action=""
           class="form-control p-4"
           id="whereForm"
-          (ngSubmit)="onSubmit()"
+          (ngSubmit)="submit()"
         >
           <div class="" id="whereInput">
             <label for="formGroupExampleInput" class="form-label"
               >Where do you want to go?</label
             >
             <input
+              name="searchString"
               type="text"
               class="form-control form-control-lg"
               id="formGroupExampleInput"
               placeholder="Enter City or State"
+              [(ngModel)]="searchString"
             />
             <div class="d-grid mt-2">
-              <button
-                type="button"
-                class="btn btn-success"
-                [routerLink]="['/search']"
-              >
+              <button type="button" class="btn btn-success" (click)="submit()">
                 Search
               </button>
             </div>

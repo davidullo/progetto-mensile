@@ -38,11 +38,16 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getBeaches();
+    this.route.params.subscribe((res: any) => {
+      this.getBeaches(res.state);
+    });
   }
 
-  getBeaches() {
+  getBeaches(state: string) {
     this.customerSvc.getAllCustomers().subscribe((res) => {
+      res = res.filter(
+        (b) => b.address.state.toLowerCase() == state.toLowerCase()
+      );
       this.customers = res;
       this.search();
     });

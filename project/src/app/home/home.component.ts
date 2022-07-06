@@ -26,6 +26,9 @@ export class HomeComponent implements OnInit {
     '',
     ''
   );
+
+  searchString: string = '';
+
   isFetching: boolean | undefined;
   constructor(private customerSvc: CustomerService, private router: Router) {}
 
@@ -49,7 +52,7 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  onSubmit() {
-    this.router.navigate(['/search']);
+  submit() {
+    this.router.navigate(['/search', this.searchString]);
   }
 }
