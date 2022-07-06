@@ -27,7 +27,7 @@ export class SearchComponent implements OnInit {
     ''
   );
 
-  luogo: any = new Customer('', '', '', '', '', '', '', '', '', '', '', '', '');
+  state: any = new Customer('', '', '', '', '', '', '', '', '', '', '', '', '');
 
   searchText = '';
 
@@ -60,11 +60,11 @@ export class SearchComponent implements OnInit {
 
   search() {
     if (this.searchText == '') {
-      this.luogo = this.customers;
-      console.log(this.luogo);
+      this.state = this.customers;
+      console.log(this.state);
     } else {
-      this.luogo = this.customers.filter((e) => {
-        return e.address.state
+      this.state = this.customers.filter((e) => {
+        return (e.address.state || e.address.city)
           ?.toLowerCase()
           .includes(this.searchText.toLowerCase());
       });

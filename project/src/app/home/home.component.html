@@ -22,7 +22,7 @@
               type="text"
               class="form-control form-control-lg"
               id="formGroupExampleInput"
-              placeholder="Enter City or State"
+              placeholder="Enter a State"
               [(ngModel)]="searchString"
             />
             <div class="d-grid mt-2">
@@ -56,7 +56,8 @@
         <div class="card-body">
           <h5 class="card-title fs-3">{{ card.address.beachName }}</h5>
           <p class="location text-muted mb-1">
-            {{ card.address.city }}, {{ card.address.state }}
+            <i class="bi bi-geo-alt"></i> {{ card.address.city }},
+            {{ card.address.state }}
           </p>
           <p class="card-text">
             {{ card.address.beachDescription }}
