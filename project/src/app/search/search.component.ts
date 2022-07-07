@@ -31,6 +31,9 @@ export class SearchComponent implements OnInit {
 
   searchText = '';
 
+  mapUrl =
+    'https://maps.googleapis.com/maps/api/staticmap?center=Rome,IT&zoom=14&size=600x6000&key=AIzaSyB3oKh0f5scCVWWAasDU_Kg-CP_cZqc-fM';
+
   constructor(
     private customerSvc: CustomerService,
     private router: Router,
