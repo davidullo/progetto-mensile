@@ -84,17 +84,17 @@ export class DetailsComponent implements OnInit {
           ',' +
           this.mapUrlState +
           this.mapUrl2;
-        console.log(this.mapUrlComplete);
+        // console.log(this.mapUrlComplete);
       },
     });
   }
 
   getCodeByCountry() {
-    console.log(this.single.address.state);
+    // console.log(this.single.address.state);
     // let a = this.lookup.byCountry('United States');
     let a = this.lookup.byCountry(this.single.address.state);
     this.mapUrlState = a.fips;
-    console.log(a);
+    // console.log(a);
     return a;
   }
 }

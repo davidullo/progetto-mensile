@@ -75,14 +75,14 @@ export class SearchComponent implements OnInit {
   search() {
     if (this.searchText == '') {
       this.state = this.customers;
-      console.log(this.state[0].address.state);
+      // console.log(this.state[0].address.state);
       this.getCodeByCountry(
         this.state[0].address.city,
         this.state[0].address.state
       );
       this.mapUrlComplete =
         this.mapUrl1 + this.mapUrlCity + ',' + this.mapUrlState + this.mapUrl2;
-      console.log(this.mapUrlComplete);
+      // console.log(this.mapUrlComplete);
     } else {
       this.state = this.customers.filter((e) => {
         return e.address.state
@@ -93,12 +93,12 @@ export class SearchComponent implements OnInit {
   }
 
   getCodeByCountry(cityString: string, stateString: string) {
-    console.log(stateString);
+    // console.log(stateString);
     // let a = this.lookup.byCountry('United States');
     let a = this.lookup.byCountry(stateString);
     this.mapUrlState = a.fips;
     this.mapUrlCity = a.capital;
-    console.log(this.mapUrlState);
+    // console.log(this.mapUrlState);
     return a;
   }
 
