@@ -50,10 +50,12 @@ export class DetailsComponent implements OnInit {
     'https://maps.googleapis.com/maps/api/staticmap?center=Tampa,US&zoom=15&size=600x600&scale=2&key=AIzaSyB3oKh0f5scCVWWAasDU_Kg-CP_cZqc-fM';
 
   mapUrl1 = 'https://maps.googleapis.com/maps/api/staticmap?center=';
-  mapUrlCity = 'https://maps.googleapis.com/maps/api/staticmap?center=';
-  mapUrlState = 'https://maps.googleapis.com/maps/api/staticmap?center=';
+  mapUrlCity = '';
+  mapUrlState = '';
   mapUrl2 =
     '&zoom=15&size=600x600&scale=2&key=AIzaSyB3oKh0f5scCVWWAasDU_Kg-CP_cZqc-fM';
+  mapUrlComplete =
+    this.mapUrl1 + this.mapUrlCity + ',' + this.mapUrlState + this.mapUrl2;
 
   isFetching: boolean | undefined;
   constructor(
@@ -67,7 +69,6 @@ export class DetailsComponent implements OnInit {
       let id = +p['id'];
       this.getID(id);
     });
-    this.getCodeByCountry();
   }
 
   getID(id: number) {
@@ -75,6 +76,15 @@ export class DetailsComponent implements OnInit {
       next: (res) => {
         this.details = res;
         this.single = this.details[id];
+        this.mapUrlCity = this.single.address.city;
+        this.getCodeByCountry();
+        this.mapUrlComplete =
+          this.mapUrl1 +
+          this.mapUrlCity +
+          ',' +
+          this.mapUrlState +
+          this.mapUrl2;
+        console.log(this.mapUrlComplete);
       },
     });
   }
@@ -83,6 +93,7 @@ export class DetailsComponent implements OnInit {
     console.log(this.single.address.state);
     // let a = this.lookup.byCountry('United States');
     let a = this.lookup.byCountry(this.single.address.state);
+    this.mapUrlState = a.fips;
     console.log(a);
     return a;
   }

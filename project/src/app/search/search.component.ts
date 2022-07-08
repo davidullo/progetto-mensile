@@ -31,8 +31,18 @@ export class SearchComponent implements OnInit {
 
   searchText = '';
 
-  mapUrl =
-    'https://maps.googleapis.com/maps/api/staticmap?center=Soverato,IT&zoom=13&size=600x600&scale=2&key=AIzaSyB3oKh0f5scCVWWAasDU_Kg-CP_cZqc-fM';
+  lookup = require('country-code-lookup');
+
+  // mapUrl =
+  //   'https://maps.googleapis.com/maps/api/staticmap?center=Rome,IT&zoom=10&size=600x6000&key=AIzaSyB3oKh0f5scCVWWAasDU_Kg-CP_cZqc-fM';
+
+  mapUrl1 = 'https://maps.googleapis.com/maps/api/staticmap?center=';
+  mapUrlCity = '';
+  mapUrlState = '';
+  mapUrl2 =
+    '&zoom=6&size=600x600&scale=1&key=AIzaSyB3oKh0f5scCVWWAasDU_Kg-CP_cZqc-fM';
+  mapUrlComplete =
+    this.mapUrl1 + this.mapUrlCity + ',' + this.mapUrlState + this.mapUrl2;
 
   constructor(
     private customerSvc: CustomerService,
@@ -56,22 +66,40 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  searchKey(data: string) {
-    this.searchText = data;
-    this.search();
-  }
+  // searchKey(data: string) {
+  //   this.searchText = data;
+  //   console.log(this.searchText);
+  //   this.search();
+  // }
 
   search() {
     if (this.searchText == '') {
       this.state = this.customers;
-      console.log(this.state);
+      console.log(this.state[0].address.state);
+      this.getCodeByCountry(
+        this.state[0].address.city,
+        this.state[0].address.state
+      );
+      this.mapUrlComplete =
+        this.mapUrl1 + this.mapUrlCity + ',' + this.mapUrlState + this.mapUrl2;
+      console.log(this.mapUrlComplete);
     } else {
       this.state = this.customers.filter((e) => {
-        return (e.address.state || e.address.city)
+        return e.address.state
           ?.toLowerCase()
           .includes(this.searchText.toLowerCase());
       });
     }
+  }
+
+  getCodeByCountry(cityString: string, stateString: string) {
+    console.log(stateString);
+    // let a = this.lookup.byCountry('United States');
+    let a = this.lookup.byCountry(stateString);
+    this.mapUrlState = a.fips;
+    this.mapUrlCity = a.capital;
+    console.log(this.mapUrlState);
+    return a;
   }
 
   // getState(state: string) {
