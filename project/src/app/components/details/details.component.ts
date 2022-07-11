@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Customer } from 'src/app/classes/customer';
 import { CustomerService } from 'src/app/customers/customer.service';
-import { countryToAlpha2, countryToAlpha3 } from 'country-to-iso';
+// import { countryToAlpha2, countryToAlpha3 } from 'country-to-iso';
 
 @Component({
   selector: 'app-details',
