@@ -27,6 +27,8 @@ export class HomeComponent implements OnInit {
     ''
   );
 
+  randomizedCustomers: Customer[] = [];
+
   searchString: string = '';
 
   isFetching: boolean | undefined;
@@ -49,6 +51,12 @@ export class HomeComponent implements OnInit {
       .subscribe((customers) => {
         this.isFetching = false;
         this.customers = customers;
+        console.log(this.customers);
+        // let's randomize customers and assign to randomizedCustomers
+        this.randomizedCustomers = this.customers.sort(
+          (a, b) => 0.5 - Math.random()
+        );
+        console.log(this.randomizedCustomers);
       });
   }
 

@@ -1,0 +1,19 @@
+.img-fluid {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.card-title {
+  letter-spacing: -3px;
+  font-weight: bold;
+}
+
+.c-description {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  height: 25px;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
