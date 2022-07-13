@@ -33,21 +33,39 @@ th {
   }
 }
 
-#likeIconDetails {
-  color: red;
-}
-#separatorIconDetails {
-  color: gray;
-}
-#facebookIconDetails {
-  color: blue;
-}
-#twitterIconDetails {
-  color: skyblue;
-}
-#instagramIconDetails {
-  color: fuchsia;
-}
-#whatsappIconDetails {
-  color: green;
+// #likeIconDetails {
+//   color: red;
+// }
+// #separatorIconDetails {
+//   color: gray;
+// }
+// #facebookIconDetails {
+//   color: blue;
+// }
+// #twitterIconDetails {
+//   color: skyblue;
+// }
+// #instagramIconDetails {
+//   color: fuchsia;
+// }
+// #whatsappIconDetails {
+//   color: green;
+//   text-decoration: none;
+// }
+
+// #likeIconDetails,
+// #separatorIconDetails,
+// #facebookIconDetails,
+// #twitterIconDetails,
+// #instagramIconDetails,
+// #whatsappIconDetails {
+//   text-decoration: none;
+// }
+
+// .instagramShare {
+//   text-decoration: none;
+// }
+
+.numLink {
+  text-decoration: none;
 }

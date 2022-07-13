@@ -68,7 +68,10 @@ export class LoginComponent implements OnInit {
     authObs.subscribe(
       (res) => {
         console.log(res);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home']).then(() => {
+          window.location.reload();
+        });
+        // this.refresh();
       },
       (error) => {
         console.log(error);
@@ -77,4 +80,8 @@ export class LoginComponent implements OnInit {
 
     form.reset();
   }
+
+  // refresh(): void {
+  //   window.location.reload();
+  // }
 }
