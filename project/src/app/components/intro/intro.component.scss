@@ -1,4 +1,29 @@
-body {
-  background: rgb(241, 219, 92);
-  height: 100vh;
+// body {
+//   width: 100%;
+//   height: 100vh;
+// }
+
+.bg {
+  background-image: url("../../../assets/intro.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 900px;
+}
+
+.init-row {
+  height: 900px;
+  $breakpoint-tablet: 1200px;
+  @media (max-width: $breakpoint-tablet) {
+    height: 700px;
+  }
+}
+
+.col-text {
+  height: 600px;
+  background-color: white;
+  border-radius: 10px;
+  $breakpoint-tablet: 1200px;
+  @media (max-width: $breakpoint-tablet) {
+    height: 400px;
+  }
 }

@@ -1,4 +1,20 @@
-<body>
-  <h1>Intro Page</h1>
-  <button class="btn btn-primary" [routerLink]="['/home']">Enter</button>
-</body>
+<div class="bg container-flex">
+  <div
+    class="init-row row justify-content-between align-items-center px-5 mx-5"
+  >
+    <div class="col-9 .d-sm-none .d-md-block"></div>
+    <div
+      class="col-text col-xl-3 col-xs-12 d-flex flex-column justify-content-center align-items-center shadow py-5"
+    >
+      <h1 class="fw-bolder text-success text-center p-2">
+        Find a beach you like, we'll take care of the rest.
+      </h1>
+      <button
+        class="btn btn-success btn-lg fw-bolder fs-1"
+        [routerLink]="['/home']"
+      >
+        Enter
+      </button>
+    </div>
+  </div>
+</div>
