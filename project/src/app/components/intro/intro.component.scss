@@ -27,3 +27,18 @@
     height: 400px;
   }
 }
+
+.enterCard {
+  animation: 1s ease-out 0s 1 zoomIn;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
