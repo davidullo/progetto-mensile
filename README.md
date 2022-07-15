@@ -13,6 +13,6 @@ Also, in order to get admin permission for a certain user, you need to set the U
 
 ## Screenshots
 
-![This is an image](https://imgur.com/4SEqexX)
-![This is an image](https://imgur.com/95fwEWh)
-![This is an image](https://imgur.com/dMYEKKf)
+![CRUD](https://i.imgur.com/4SEqexX.jpg)
+![Beach Details](https://i.imgur.com/95fwEWh.png)
+![Home](https://i.imgur.com/dMYEKKf.jpg)
