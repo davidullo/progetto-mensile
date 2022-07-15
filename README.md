@@ -3,7 +3,7 @@
 ## Introduction
 
 This is my first real project I made with Angular.
-Basically, it is a simple CRUD Web App which helps people find a 🏖️ on a beach in a place they like.
+Basically, it is a simple CRUD Web App which helps people find a 🏖️ in a place they like.
 
 ## Technical aspects
 

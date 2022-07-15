@@ -4,6 +4,8 @@ import { map } from 'rxjs/operators';
 import { Customer } from 'src/app/classes/customer';
 import { CustomerService } from 'src/app/customers/customer.service';
 
+const FILTER_PAG_REGEX = /[^0-9]/g;
+
 @Component({
   selector: 'app-explore',
   templateUrl: './explore.component.html',
@@ -14,6 +16,9 @@ export class ExploreComponent implements OnInit {
 
   customers: Customer[] = [];
   randomizedCustomers: Customer[] = [];
+
+  page = 5;
+  pageSize = 5;
 
   ngOnInit(): void {
     this.customerSvc
@@ -37,5 +42,13 @@ export class ExploreComponent implements OnInit {
         );
         console.log(this.randomizedCustomers);
       });
+  }
+
+  selectPage(page: string) {
+    this.page = parseInt(page, 10) || 1;
+  }
+
+  formatInput(input: HTMLInputElement) {
+    input.value = input.value.replace(FILTER_PAG_REGEX, '');
   }
 }
