@@ -46,9 +46,6 @@ export class DetailsComponent implements OnInit {
 
   lookup = require('country-code-lookup');
 
-  mapUrl =
-    'https://maps.googleapis.com/maps/api/staticmap?center=Tampa,US&zoom=15&size=600x600&scale=2&key=AIzaSyB3oKh0f5scCVWWAasDU_Kg-CP_cZqc-fM';
-
   mapUrl1 = 'https://maps.googleapis.com/maps/api/staticmap?center=';
   mapUrlCity = '';
   mapUrlState = '';

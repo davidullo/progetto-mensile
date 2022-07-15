@@ -33,8 +33,6 @@ export class SearchComponent implements OnInit {
 
   lookup = require('country-code-lookup');
 
-  // mapUrl =
-  //   'https://maps.googleapis.com/maps/api/staticmap?center=Rome,IT&zoom=10&size=600x6000&key=AIzaSyB3oKh0f5scCVWWAasDU_Kg-CP_cZqc-fM';
 
   mapUrl1 = 'https://maps.googleapis.com/maps/api/staticmap?center=';
   mapUrlCity = '';
