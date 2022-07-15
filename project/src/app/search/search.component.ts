@@ -44,6 +44,9 @@ export class SearchComponent implements OnInit {
   mapUrlComplete =
     this.mapUrl1 + this.mapUrlCity + ',' + this.mapUrlState + this.mapUrl2;
 
+  page = 5;
+  pageSize = 5;
+
   constructor(
     private customerSvc: CustomerService,
     private router: Router,
