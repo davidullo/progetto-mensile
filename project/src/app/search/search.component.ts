@@ -4,6 +4,8 @@ import { map } from 'rxjs/operators';
 import { Customer } from '../classes/customer';
 import { CustomerService } from '../customers/customer.service';
 
+const FILTER_PAG_REGEX = /[^0-9]/g;
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -27,12 +29,11 @@ export class SearchComponent implements OnInit {
     ''
   );
 
-  state: any = new Customer('', '', '', '', '', '', '', '', '', '', '', '', '');
+  state: Customer[] = [];
 
   searchText = '';
 
   lookup = require('country-code-lookup');
-
 
   mapUrl1 = 'https://maps.googleapis.com/maps/api/staticmap?center=';
   mapUrlCity = '';
@@ -54,6 +55,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((res: any) => {
       this.getBeaches(res.state);
+      console.log(res.state);
     });
   }
 
@@ -76,6 +78,8 @@ export class SearchComponent implements OnInit {
   search() {
     if (this.searchText == '') {
       this.state = this.customers;
+      console.log(this.customers);
+
       // console.log(this.state[0].address.state);
       this.getCodeByCountry(
         this.state[0].address.city,
@@ -111,4 +115,12 @@ export class SearchComponent implements OnInit {
   //     },
   //   });
   // }
+
+  selectPage(page: string) {
+    this.page = parseInt(page, 10) || 1;
+  }
+
+  formatInput(input: HTMLInputElement) {
+    input.value = input.value.replace(FILTER_PAG_REGEX, '');
+  }
 }
