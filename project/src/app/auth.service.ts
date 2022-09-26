@@ -40,7 +40,7 @@ export class AuthService implements HttpInterceptor {
   signup(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCABbL4GL9GQn8d7xKKw1PpDsxKDXmVfxY',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD_B0LR-T8YUAhmdrvckkIHjoIcNOFZ3NM',
         {
           email: email,
           password: password,
@@ -62,7 +62,7 @@ export class AuthService implements HttpInterceptor {
   login(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCABbL4GL9GQn8d7xKKw1PpDsxKDXmVfxY',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD_B0LR-T8YUAhmdrvckkIHjoIcNOFZ3NM',
         {
           email: email,
           password: password,
